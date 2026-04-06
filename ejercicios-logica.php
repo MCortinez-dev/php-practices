@@ -1,5 +1,4 @@
-/*
-Ejercitación de funciones, estructuras (condicionales y bucles)
+<!-- Ejercitación de funciones, estructuras (condicionales y bucles)
     1. En una tienda de empanadas quieren saber qué día del mes venden más cantidad de empanadas.
         a. Realice un programa para almacenar la cantidad de empanadas vendidas por día (considerar que el mes tiene 30 días). Utilizar el array empanadasVendidas[]. Cargar el array con los siguientes valores: {10, 43, 46, 26, 482, 620, 324, 94, 32, 14, 65, 503, 720, 234, 48, 21, 54, 79, 89, 365, 621, 478, 832, 49, 30, 27, 44, 73, 300, 100, 200}
         b. Realizar una función que encuentre que día del mes vendió más empanadas. La función debe devolver el número de día de mayor venta. Informar al usuario que día se vendió más empanadas y cuántas se vendió.
@@ -9,9 +8,7 @@ Ejercitación de funciones, estructuras (condicionales y bucles)
             iii. imprimirVentas() : para imprimir las ventas de cada uno de los días. Debe mostrar el número de día y la cantidad de empanadas vendida.
             iv. promedioVentas() : para imprimir el promedio de las ventas.
             v. menorVenta() : para imprimir la cantidad mínima de venta en un día.
-            Informar día y cantidad.
-*/
-
+            Informar día y cantidad. -->
 <br>
 <br>
 
@@ -84,8 +81,7 @@ function menorVenta($empanadasVendidas) {
 menorVenta($empanadasVendidas);
 ?>
 
-/*
-2. Se desea calcular la cantidad de pintura necesaria para pintar un departamento.
+<!-- 2. Se desea calcular la cantidad de pintura necesaria para pintar un departamento.
 
 a. Para esto se deberá realizar un programa que permita realizar el cálculo.
     i. Cantidad de ambientes del departamento o casa (1, 2, 3 o 4 ambientes).
@@ -99,6 +95,7 @@ ingresoMedidasHabitacion();
 calculoMetrosHabitacion(ancho, largo, alto);
 calculoLitrosPintura(metrosTotales); exhibirResultados(aaa, bbb, ccc);
 
-Codifique cada una de las funciones.
-*/
+Codifique cada una de las funciones. -->
+
+
 
