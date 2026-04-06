@@ -1,11 +1,11 @@
-/* Trabajo individual,
+<!-- Trabajo individual,
 Crear un formulario HTML simple con dos inputs numéricos. Al enviar, un script PHP debe recibir los datos, detectar qué operación se pidió, calcular y devolver el resultado.
 Entregar el archivo comprimido renombrado como ej 3 y  el apellido del participante.
 
 Recuerden citar la IA y en que porcentaje del totalidad de la tarea colaboró.
 
-Ejemplo: ej_3_acri_perez_lopez.zip
-*/
+Ejemplo: ej_3_acri_perez_lopez.zip -->
+
 
 <form method="GET">
 
@@ -61,4 +61,4 @@ if (isset($_GET["numero_1"]) && isset($_GET["numero_2"]) && isset($_GET["operaci
 
 ?>
 
-/* Aun no estoy completamente embebido en php, asi que la IA me corrigió los errores de estructura, conozco como se resuelve sigo programando en otro lenguaje.*/
+<!-- Aun no estoy completamente embebido en php, asi que la IA me corrigió los errores de estructura, conozco como se resuelve sigo programando en otro lenguaje. -->
