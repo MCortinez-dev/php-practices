@@ -9,10 +9,7 @@
             iv. promedioVentas() : para imprimir el promedio de las ventas.
             v. menorVenta() : para imprimir la cantidad mínima de venta en un día.
             Informar día y cantidad. -->
-<br>
-<br>
-
-<?php
+<?php $mensaje = "Ejercicio empanadas";
 
 $empanadasVendidas = array(10, 43, 46, 26, 482, 620, 324, 94, 32, 14, 65, 503, 720, 234, 48, 21, 54, 79, 89, 365, 621, 478, 832, 49, 30, 27, 44, 73, 300, 100, 200);
 
@@ -33,31 +30,31 @@ function mayorVenta($empanadasVendidas) {
             }
         }
     }
-    echo "En el mes $mes El día $dia se vendió la mayor cantidad de empanadas con un total de $mayor, ver que cliente compro la mayor cantidad <br><br>";
+    return "En el mes $mes El día $dia se vendió la mayor cantidad de empanadas con un total de $mayor, ver que cliente compro la mayor cantidad <br><br>";
 }
-mayorVenta($empanadasVendidas);
+
 
 function imprimirVentas($empanadasVendidas) {
-    $ventaDia = 0;
-    $dia = 0;
-    $mes = 1;
+    $resultado = "";
     for ($i = 0; $i < count($empanadasVendidas); $i++) {
         $ventaDia = $empanadasVendidas[$i];
         $dia = $i + 1;
+        $mes = 1;
         if ($dia > 30) {
             $mes = intdiv($dia, 30) + 1;
             $dia = $dia % 30;
         }
-        echo "Mes $mes - Día $dia : $ventaDia empanadas <br>";
+        $resultado .= "Mes $mes - Día $dia : $ventaDia empanadas <br>";
     }
+    return $resultado;
 }
-imprimirVentas($empanadasVendidas);
+
 
 function promedioVentas($empanadasVendidas) {
     $promedioVentas = round(array_sum($empanadasVendidas) / count($empanadasVendidas),2);
-    echo "<br>El promedio de ventas es $promedioVentas<br>";
+    return "<br>El promedio de ventas es $promedioVentas<br>";
 }
-promedioVentas($empanadasVendidas);
+
 
 function menorVenta($empanadasVendidas) {
     $menor = $empanadasVendidas[0];
@@ -76,12 +73,13 @@ function menorVenta($empanadasVendidas) {
             }
         }
     }
-    echo "En el mes $mes El día $dia se vendió la menor cantidad de empanadas con un total de $menor , fijarse las cámaras que los empleados no se coman los insumos<br><br>";
+    return "En el mes $mes El día $dia se vendió la menor cantidad de empanadas con un total de $menor , fijarse las cámaras que los empleados no se coman los insumos<br><br>";
 }
-menorVenta($empanadasVendidas);
-?>
-
-<!-- 2. Se desea calcular la cantidad de pintura necesaria para pintar un departamento.
+$resultadoMayor = mayorVenta($empanadasVendidas);
+$resultadoVentas = imprimirVentas($empanadasVendidas);
+$resultadoPromedio = promedioVentas($empanadasVendidas);
+$resultadoMenor = menorVenta($empanadasVendidas);
+/*2. Se desea calcular la cantidad de pintura necesaria para pintar un departamento.
 
 a. Para esto se deberá realizar un programa que permita realizar el cálculo.
     i. Cantidad de ambientes del departamento o casa (1, 2, 3 o 4 ambientes).
@@ -95,7 +93,52 @@ ingresoMedidasHabitacion();
 calculoMetrosHabitacion(ancho, largo, alto);
 calculoLitrosPintura(metrosTotales); exhibirResultados(aaa, bbb, ccc);
 
-Codifique cada una de las funciones. -->
+Codifique cada una de las funciones.*/
+
+$mensaje1 = "Ejercicio pintor";
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+<!Doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Lógica</title>
+</head>
+<body>
+
+<h1><?php echo $mensaje; ?></h1>
+<?php
+echo $resultadoMayor;
+echo $resultadoVentas;
+echo $resultadoPromedio;
+echo $resultadoMenor;
+?>
+<br>
+<br>
+<h1><?php echo $mensaje1; ?></h1>
+<?php
+
+?>
+</body>
+</html>
