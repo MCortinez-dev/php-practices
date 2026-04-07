@@ -6,7 +6,9 @@ Recuerden citar la IA y en que porcentaje del totalidad de la tarea colaboró.
 
 Ejemplo: ej_3_acri_perez_lopez.zip -->
 
-
+Calculadora de prueba - Coloque dos numeros en los primeros cuadros y luego la operacion correspondiente en el último recuadro.
+<br>
+<br>
 <form method="GET">
 
 <input type="number" name="numero_1" />
