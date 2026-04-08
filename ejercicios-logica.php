@@ -79,52 +79,109 @@ $resultadoMayor = mayorVenta($empanadasVendidas);
 $resultadoVentas = imprimirVentas($empanadasVendidas);
 $resultadoPromedio = promedioVentas($empanadasVendidas);
 $resultadoMenor = menorVenta($empanadasVendidas);
-/*2. Se desea calcular la cantidad de pintura necesaria para pintar un departamento.
 
+/*2. Se desea calcular la cantidad de pintura necesaria para pintar un departamento.
 a. Para esto se deberá realizar un programa que permita realizar el cálculo.
     i. Cantidad de ambientes del departamento o casa (1, 2, 3 o 4 ambientes).
     ii. Para cada ambiente el largo y ancho expresado en metros. Suponer: Que no se pintan el baño, lavadero ni cocina. (para simplificar).
     iii. Altura de todos los techos es: 2,5 metros. Se utiliza el mismo color de pintura para todas las habitaciones. El rendimiento de la pintura es de 8.5m2 /litro. Se realizan dos manos de pintura.
     iv. El programa debe indicar la totalidad de metros cuadrados a pintar. Cantidad de litros de pintura que hay que comprar. Para desarrollar el programa, divida en funciones las diferentes tareas.
-
 Algunas podrían ser:
 ingresoCantidadHabitaciones();
 ingresoMedidasHabitacion();
 calculoMetrosHabitacion(ancho, largo, alto);
-calculoLitrosPintura(metrosTotales); exhibirResultados(aaa, bbb, ccc);
-
+calculoLitrosPintura(metrosTotales); 
+exhibirResultados(aaa, bbb, ccc);
 Codifique cada una de las funciones.*/
 
 $mensaje1 = "Ejercicio pintor";
 
+$altura = 2.5;
+$rendimiento = 8.5;
+$manos_pintura = 2;
 
+function ingresoMedidasHabitacion($cantidad,$alto){
 
+    $resultado = "";
 
+    if(isset($_GET["largoHabitacion"]) && isset($_GET["anchoHabitacion"])){
+        # Aca la IA colaboro diciendome que los PHP puede generar arrays usando get, se me complicaba usar diccionarios en PHP.
+        $largos = $_GET["largoHabitacion"];
+        $anchos = $_GET["anchoHabitacion"];
 
+        for($i=0;$i<$cantidad;$i++){
+            $largo = $largos[$i] ?? ""; #Evita problemas de null en campos
+            $ancho = $anchos[$i] ?? "";
+            # Dentro del bucle se imprime cada detalle de las habitaciones al tener dos array generados paralelamente se mantiene la relatividad alto ancho
+            if($largo != "" && $ancho != ""){
+                $resultado .= "Habitación ".($i+1)." mide $largo x $ancho x $alto <br>";
+            }
+        }
+    }
+    return $resultado;
+}
 
+function calculoMetrosHabitacion($cantidad,$alto){
 
+    $total = 0;
+    $detalle = "";
+    #Superglobales, para evitar crear arrays como la lógica PHP esta al inicio aprovecho las superglobales que me hacen dos array correlativos y ordenados.
+    if(isset($_GET["largoHabitacion"]) && isset($_GET["anchoHabitacion"])){
+        $largos = $_GET["largoHabitacion"];
+        $anchos = $_GET["anchoHabitacion"];
 
+        for($i=0;$i<$cantidad;$i++){
+            $largo = $largos[$i] ?? "";
+            $ancho = $anchos[$i] ?? "";
+            if($largo != "" && $ancho != ""){
+                $metrosHabitacion = ($largo + $ancho) * 2 * $alto; # formula optima conciderando que el altura es fija
+                $detalle .= "Habitación ".($i+1)." tiene $metrosHabitacion m2 de paredes<br>";
+                $total += $metrosHabitacion; # suno los metros individuales para conservar solo el total acualizado con un valor acumulado cuando termina el bucle
+            }
+        }
+    }
+    return [$total,$detalle]; #Agregue detalles de m2 por habitacion en índice 1
+}
 
+function calculoLitrosPintura($metrosTotales,$rendimiento,$manos){
+    $litros = ($metrosTotales * $manos) / $rendimiento;
+    return round($litros,2);
+}
 
+function exhibirResultados($textoHabitaciones,$detalleMetros,$metrosTotales,$litros){
 
+    $salida = ""; # Genero variable string vacio
+    # Comienzo concatenación
+    $salida .= $textoHabitaciones;
+    $salida .= "<br>";
+    $salida .= $detalleMetros;
+    $salida .= "<br>Metros totales a pintar: $metrosTotales m2";
+    $salida .= "<br>Litros de pintura necesarios: $litros litros";
 
+    return $salida;
+}
+# Uso funciones anteriores
+$cantidadHabitaciones = $_GET["cantidadHabitaciones"] ?? 0;
 
+$textoHabitaciones = ingresoMedidasHabitacion($cantidadHabitaciones,$altura);
 
+$resultadoMetros = calculoMetrosHabitacion($cantidadHabitaciones,$altura);
+$metrosTotales = $resultadoMetros[0];
+$detalleMetros = $resultadoMetros[1];
 
+$litros = calculoLitrosPintura($metrosTotales,$rendimiento,$manos_pintura);
 
-
-
-
+$resultadoFinal = exhibirResultados($textoHabitaciones,$detalleMetros,$metrosTotales,$litros);
 
 ?>
 
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios Lógica</title>
+<meta charset="UTF-8">
+<title>Ejercicio Pintor</title>
 </head>
+
 <body>
 
 <h1><?php echo $mensaje; ?></h1>
@@ -134,11 +191,46 @@ echo $resultadoVentas;
 echo $resultadoPromedio;
 echo $resultadoMenor;
 ?>
-<br>
-<br>
-<h1><?php echo $mensaje1; ?></h1>
-<?php
 
+<h1><?php echo $mensaje1; ?></h1>
+
+<form method="GET">
+
+<label>Cantidad habitaciones:</label>
+<input type="text" name="cantidadHabitaciones"><br><br>
+
+<label>Largo habitación 1:</label>
+<input type="text" name="largoHabitacion[]">
+
+<label>Ancho habitación 1:</label>
+<input type="text" name="anchoHabitacion[]"><br><br>
+
+<label>Largo habitación 2:</label>
+<input type="text" name="largoHabitacion[]">
+
+<label>Ancho habitación 2:</label>
+<input type="text" name="anchoHabitacion[]"><br><br>
+
+<label>Largo habitación 3:</label>
+<input type="text" name="largoHabitacion[]">
+
+<label>Ancho habitación 3:</label>
+<input type="text" name="anchoHabitacion[]"><br><br>
+
+<label>Largo habitación 4:</label>
+<input type="text" name="largoHabitacion[]">
+
+<label>Ancho habitación 4:</label>
+<input type="text" name="anchoHabitacion[]"><br><br>
+
+<input type="submit" value="Calcular pintura">
+
+</form>
+<br>
+
+<?php
+echo $resultadoFinal;
 ?>
+
 </body>
 </html>
