@@ -2,9 +2,9 @@
 <?php
     $host="localhost";
     $pass="";
-    $user="root"
-    $db="ejemplo"
-    $port="3306"
+    $user="root";
+    $db="ejemplo";
+    $port="3306";
     
     // $host="localhost";
     // $pass="";
