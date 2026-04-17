@@ -1,4 +1,3 @@
-#Para conectar con la base de datos, se hace un archivo y luego se invoca
 <?php
     $host="localhost";
     $pass="";
