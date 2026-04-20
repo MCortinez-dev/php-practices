@@ -8,11 +8,10 @@
     if($conn->query($sql)===TRUE){
         echo "el dato se borro";
         echo "<a href='f_borrar.php'> Volver</a>";
-        header('location: http:/php.. f_borrar');
+        header('location: f_borrar.php');
     }else{
         echo "hay error";
-        echo "<a href='f_borrar.php> Volver </a>";
-
+        echo "<a href='f_borrar.php'> Volver </a>";
     }
 
     $conn->close();

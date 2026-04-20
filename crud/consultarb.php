@@ -39,13 +39,12 @@
     <input type="submit" value="Borrar">
     </form>
 
-    <?php 
+<?php 
         }else{
             echo "ese codigo no existe";
-            echo "<a href='f_borrar.php> Volver </a>";
+            echo "<a href='f_borrar.php'> Volver </a>";
     }
-    
-    ?>
+?>
 
 </body>
 </html>

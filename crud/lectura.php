@@ -10,9 +10,9 @@
 <?php
 require_once("conexion.php");
 
-$consulta = "SELECT*FROM material";
+$$consulta = "SELECT * FROM material";
 
-$resultado = $conn->query("SELECT*FROM material");
+$resultado = $conn->query($consulta);
 
 if($resultado -> num_rows >0){
     echo "<h1>Registro de materiales</h1><br>";
