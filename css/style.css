@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+    color: blue;
+}
+
+table{
+    /*background-color: bisque;
+    width: 25%;
+    border: 20px;
+    border-color: green;
+    border-style: groove;*/
+
+    border: 5px solid blueviolet;
+    margin: 5px;
+}
+
+.izq{
+    text-align: right;
+}
+
+/*Para usar la clase*/
+#usu{
+    color: aquamarine;
+}
+
+.der{
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.btn{
+    text-align: center;
+    padding: 10px;
+
+}
+
+.contenedor{
+    background-color: rgb(156, 31, 156);
+}
