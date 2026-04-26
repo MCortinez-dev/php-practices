@@ -1,59 +1,83 @@
-*{
-    box-sizing: border-box; /*para que no se desborde*/
-    margin: 0; /*para que no deje margen , si me sirve*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-h1{
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
-table{
-    /*background-color: bisque;
-    width: 25%;
-    border: 20px;
-    border-color: green;
-    border-style: groove;*/
-
-    border: 5px solid blueviolet;
-    margin: 5px;
-    border-radius: 50%;
-}
-
-.izq{
-    text-align: right;
-}
-
-/*Para usar la clase*/
-#usu{
-    color: aquamarine;
-}
-
-.der{
-    text-align: left;
-    padding: 10px 5px;
-}
-
-.btn{
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-
-}
-
-.contenedor{
-    background-color: rgb(156, 31, 156);
-    width: 300px;
-    margin: auto;
-    /*margin-top: 50px;*/
-    padding-top: 25px;
-    padding-bottom:25px;
-    border-radius: 50%;
+.contenedor {
+    background-color: #9c1f9c; 
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 15px; /* Un radio suave, no un círculo */
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
 }
 
 .interno {
-    background: linear-gradient(rgba(0, 255, 89, 0.51),rgb(194, 43, 194));
-    margin: auto;
-    width: 400px;
-    border-radius: 50%;
+    background: white; /* Fondo blanco para que sea legible */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px; /* Espaciado entre filas */
+}
+
+.izq {
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+    padding-right: 10px;
+}
+
+.der {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+#contra {
+    color: #333; /* Azul era difícil de leer */
+}
+
+.btn {
+    text-align: center;
+    padding-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: #9c1f9c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #7a187a;
 }
