@@ -10,7 +10,7 @@
 <?php
 require_once("conexion.php");
 
-$$consulta = "SELECT * FROM material";
+$consulta = "SELECT * FROM material";
 
 $resultado = $conn->query($consulta);
 

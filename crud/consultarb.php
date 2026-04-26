@@ -11,7 +11,7 @@
 
     $id=$_POST["cod"];
 
-    $sql= "SELECT * FROM material where cod_material = '$id' ";
+    $sql= "SELECT * FROM material where cod_material = '$id'";
 
     $resultado = $conn->query($sql);
 

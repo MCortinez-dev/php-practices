@@ -2,7 +2,7 @@
     $cod = $_POST["cod"];
     $des = $_POST["des"];
 
-    $sql = "UPDATE material SET descripcion = '$des' WHERE cod_material = $cod";
+    $sql = "UPDATE material SET descripcion = '$des' WHERE cod_material = '$cod'";
 
     require_once("conexion.php");
 

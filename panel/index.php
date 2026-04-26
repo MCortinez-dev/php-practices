@@ -14,12 +14,12 @@
         if(isset($_POST["cr"])){
             $nombre=$_POST["nom"];
             $contrasenia=$_POST["contra"];
-            $hpas=$_POST;
+            $hpas=$_POST["phash"];
 
             $sql= "INSERT INTO datos_usuarios(usuarios, password, hash_password) VALUES (:n_nom, :n_cont,:n_hpas)";
 
             $resultado=$base->prepare($sql);
-            $resultado->execute(array(":n-nom"=>$nom,":n_cont=>$contrasenia", ":n_hpas=>$hpas"));
+            $resultado->execute(array(":n_nom"=>$nom,":n_cont=>$contrasenia", ":n_hpas=>$hpas"));
         }
     ?>
 
@@ -35,7 +35,7 @@
 
             <?php
             $registro=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ);
-            foreach($registros as $persona):
+            foreach($registro as $persona):
             ?>
 
             <tr>
@@ -44,13 +44,13 @@
                 <td><?php echo $persona->password?></td>
                 <td><?php echo $persona->hash_password?></td>
                 <td>
-                    <a href="editar.php?"id=<?php echo $persona->id_usuarios?> & nom=<?php echo $persona->usuarios?>& pas=<?php echo $persona->password?>>
+                    <a href="editar.php?id=<?php echo $persona->id_usuarios?> & nom=<?php echo $persona->usuarios?>& pas=<?php echo $persona->password?>">
                         <input type="button" value="Modificar">
                         <img src="/img/dragon.png" alt="icono modificar" width="30px">
                     </a>
                 </td>
                 <td>
-                    <a href="borrar.php?"id=id=<?php echo $persona->id_usuarios?>>
+                    <a href="borrar.php?id=<?php echo $persona->id_usuarios?>">
                         <input type="button" value="Borrar">
                         <img src="/img/dragon.png" alt="Imagen eliminar" width="30px">
                     </a>
