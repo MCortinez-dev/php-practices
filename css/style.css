@@ -1,6 +1,11 @@
+*{
+    box-sizing: border-box; /*para que no se desborde*/
+    margin: 0; /*para que no deje margen , si me sirve*/
+}
+
 h1{
     text-align: center;
-    color: blue;
+    color: rgb(0, 0, 0);
 }
 
 table{
@@ -12,6 +17,7 @@ table{
 
     border: 5px solid blueviolet;
     margin: 5px;
+    border-radius: 50%;
 }
 
 .izq{
@@ -31,9 +37,23 @@ table{
 .btn{
     text-align: center;
     padding: 10px;
+    border-radius: 10px;
 
 }
 
 .contenedor{
     background-color: rgb(156, 31, 156);
+    width: 300px;
+    margin: auto;
+    /*margin-top: 50px;*/
+    padding-top: 25px;
+    padding-bottom:25px;
+    border-radius: 50%;
+}
+
+.interno {
+    background: linear-gradient(rgba(0, 255, 89, 0.51),rgb(194, 43, 194));
+    margin: auto;
+    width: 400px;
+    border-radius: 50%;
 }
