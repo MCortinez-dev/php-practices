@@ -19,7 +19,7 @@
             $sql= "INSERT INTO datos_usuarios(usuarios, password, hash_password) VALUES (:n_nom, :n_cont,:n_hpas)";
 
             $resultado=$base->prepare($sql);
-            $resultado->execute(array(":n_nom"=>$nom,":n_cont=>$contrasenia", ":n_hpas=>$hpas"));
+            $resultado->execute(array(":n_nom"=>$nombre,":n_cont"=>$contrasenia,":n_hpas"=>$hpas));
         }
     ?>
 
@@ -44,15 +44,15 @@
                 <td><?php echo $persona->password?></td>
                 <td><?php echo $persona->hash_password?></td>
                 <td>
-                    <a href="editar.php?id=<?php echo $persona->id_usuarios?> & nom=<?php echo $persona->usuarios?>& pas=<?php echo $persona->password?>">
+                    <a href="editar.php?id=<?php echo $persona->id_usuarios?>&nom=<?php echo $persona->usuarios?>&pas=<?php echo $persona->password?>">
                         <input type="button" value="Modificar">
-                        <img src="/img/dragon.png" alt="icono modificar" width="30px">
+                        <img src="../img/editar.png" alt="icono modificar" width="30px">
                     </a>
                 </td>
                 <td>
                     <a href="borrar.php?id=<?php echo $persona->id_usuarios?>">
                         <input type="button" value="Borrar">
-                        <img src="/img/dragon.png" alt="Imagen eliminar" width="30px">
+                        <img src="../img/eliminar.png" alt="Imagen eliminar" width="30px">
                     </a>
                 </td>
             </tr>
@@ -74,10 +74,10 @@
                 </td>
                 <td>
                 <input type="submit" value="Guardar" name="cr">
-                <img src="/img/dragon.png" alt="Imagen guardar" width="30px">
+                <img src="../img/save.png" alt="Imagen guardar" width="30px">
                 <button type="submit" name="insertar" value="Insertar">
                     Insertar
-                    <img src="/img/dragon.png" alt="Imagen guardar" width="30px">
+                    <img src="../img/save.png" alt="Imagen guardar" width="30px">
                 </button>
                 </td>
             </tr>
