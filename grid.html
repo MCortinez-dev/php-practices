@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .navbar{
+            display: block;
+            background-color: rgb(211, 186, 156);
+            width: 100%;
+            height: 50px;
+            font-size: 30px;
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 33.3%, 33.3%, 33.3%;
+            font-size: 25px;
+            grid-template-areas: "t w f"
+                                 "t s s"
+                                 "t s s";
+            border: 3px solid blue;
+            grid-gap: 15px;
+            height: 450px;
+            padding: 10px;
+        }
+
+        .s1{
+            background-color: rgb(115, 243, 200);
+            grid-area: f;
+            font-weight: 600;
+        }
+
+        .s2{
+            background-color: blueviolet;
+            grid-area: s;
+        }
+
+        .s3{
+            background-color: rgb(43, 153, 226);
+            grid-area: t;
+        }
+
+        .s4{
+            background-color: rgb(236, 91, 115);
+            grid-area: w;
+            padding: 20px;
+        }
+
+        .footer{
+            display: block;
+            background-color: rgb(211, 186, 156);
+            width: 100%;
+            height: 50px;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width:640px) {
+            .container{
+                grid-template-areas: "t t t" "w w s" "f f f";
+            }
+
+            .s4{
+                background-color: brown;
+                font-weight: bold;
+                color:antiquewhite;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">Esta es la barra de navegación</nav>
+    <main class="container">
+        
+        <section class="s1">Sección 1
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, magnam! Asperiores similique iure totam natus quis maxime laborum temporibus excepturi, placeat quisquam ipsa nemo fuga labore adipisci voluptas ducimus non!
+            </p>
+        </section>
+
+        <section class="s2">Sección 2
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, magnam! Asperiores similique iure totam natus quis maxime laborum temporibus excepturi, placeat quisquam ipsa nemo fuga labore adipisci voluptas ducimus non!
+            </p>
+        </section>
+        
+        <section class="s3">Sección 3
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, magnam! Asperiores similique iure totam natus quis maxime laborum temporibus excepturi, placeat quisquam ipsa nemo fuga labore adipisci voluptas ducimus non!
+            </p>
+        </section>
+        
+        <section class="s4">Sección 4
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, magnam! Asperiores similique iure totam natus quis maxime laborum temporibus excepturi, placeat quisquam ipsa nemo fuga labore adipisci voluptas ducimus non!
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">Esto es el pie de pagina</footer>
+</body>
+
+</html>
