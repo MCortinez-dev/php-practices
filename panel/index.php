@@ -43,11 +43,9 @@
             </tr>
 
             <?php
-
             $registro=$base->query("SELECT * FROM datos_usuarios")->fetchAll(PDO::FETCH_OBJ);
 
             foreach($registro as $persona):
-
             ?>
 
             <tr>
