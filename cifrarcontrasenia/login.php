@@ -15,7 +15,7 @@
         <h1>
             Ingreso al Sistema
         </h1>
-        <form action="#" method="post">
+        <form action="comprobar.php" method="post">
             <table>
                 <tr>
                     <td class="izq">
