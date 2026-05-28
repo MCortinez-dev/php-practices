@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imprimir{
+            /* display: none; */
+        }
+
+        @page{
+            size: a4 portrait;
+            /* size: a4 landscape; */
+            margin: 1cm 1cm 1cm 1cm;
+        }
+
+        @media print {
+            .imprimir{
+                display: none;
+            }
+
+            body {
+            /* Fuerza al navegador a imprimir los colores de fondo */
+            -webkit-print-color-adjust: exact; /* Para Chrome, Safari, Edge, Opera */
+            print-color-adjust: exact;         /* Estándar moderno (Firefox y otros) */
+            }
+                .footer{
+            position: fixed;
+            bottom: 0;
+            border: 1px solid red;
+            }
+
+            .header{
+            position: fixed;
+            top: 0;
+            }
+        }
+
+        .header, .footer{
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="header">
+        <h1>Soy tu encabezado</h1>
+    </div>
+
+    <div>
+        <button class="imprimir" onclick="window.print()">
+            Generar PDF
+        </button>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+        <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1>Soy tu contenido</h1>
+    </div>
+
+    <div>
+        <h1 class="footer">Soy tu pie</h1>
+    </div>
+
+</body>
+</html>

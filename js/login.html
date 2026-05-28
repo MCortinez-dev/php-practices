@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Login</title>
+    
+    <style>
+        /* Configuraciones básicas para centrar todo en la pantalla */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor principal de la tarjeta de login */
+        .login-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .login-card h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Contenedor para cada grupo de etiqueta + input */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Estilo para los campos de texto */
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Evita que el input se salga del contenedor */
+        }
+
+        /* Estilo del botón */
+        .btn-ingresar {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-ingresar:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="login-card">
+        <h1>Ingreso al Sistema</h1>
+        
+        <!-- Al dejar el action vacío, el formulario no va a ningún archivo externo -->
+        <!-- <form action="" method="POST"> -->
+            
+            <div class="input-group">
+                <label for="usu">Usuario</label>
+                <input type="text" id="usu" name="usu" placeholder="Ej: alumno123">
+            </div>
+
+            <div class="input-group">
+                <label for="contra">Contraseña</label>
+                <!-- Usamos type="password" para que se oculten los caracteres al escribir -->
+                <input type="password" id="contra" name="contra" placeholder="••••••••">
+            </div>
+
+            <button type="submit" class="btn-ingresar">Ingresar</button>
+
+            <button type="submit" class="btn-ingresar">Ingresar</button>
+
+            <input type="button" class="btn-ingresar" value="Probar Consola" onclick="console.log('hola!!!!')">
+
+            <input type="button" class="btn-ingresar" value="Probar Consola 3" onclick="let usuario = document.querySelector('#usu').value; console.log(usuario); document.querySelector('#usu').value = usuario; return usuario;">
+
+            <input type="button" class="btn-ingresar" value="Probar Consola 2" onclick="let usuario =document.querySelector('#usu').value; console.log(usuario); document.querySelector('#usu').innerText = usuario">
+            
+            <input type="submit" value="5 Ingresar" onclick="let usuario =document.querySelector('#usu').value; document.querySelector('#mensaje').innerText = 'hola:'+ usuario">
+            
+            <input type="submit" value="6 Seleccioname" onclick="myFuncion()">
+
+            <div id="mensaje"></div>
+        <!-- </form> -->
+    </main>
+
+    <script>
+        function myFuncion(){
+            alert("soy un pop-up");
+        }
+    </script>
+
+</body>
+</html>
